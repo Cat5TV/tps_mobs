@@ -81,13 +81,13 @@ mobs:register_mob("tps_mobs:dragon_cave", {
 	walk_velocity = 3,
 	run_velocity = 5,
 	jump = true,
-	fly = true,
+	--fly = true,
 	rotate = 180,
 	drops = {
 		{name = "mobs:lava_orb", chance = 1, min = 1, max = 1},
 	},
-	fall_speed = 0,
-	stepheight = 3,
+	--fall_speed = 0,
+	stepheight = 1
 	water_damage = 2,
 	lava_damage = 0,
 	light_damage = 0,
@@ -137,13 +137,13 @@ mobs:register_mob("tps_mobs:dragon", {
 	fly = true,
 	rotate = 180,
 	drops = {
-		{name = "mobs:lava_orb", chance = 1, min = 1, max = 1},
+		{name = "default:mese_crystal_fragment", chance = 1, min = 1, max = 4},
 	},
 	fall_speed = 0,
 	stepheight = 3,
 	water_damage = 2,
 	lava_damage = 0,
-	light_damage = 15,
+	light_damage = 20,
 	view_range = 60,
 	animation = {
 		speed_normal = 10,
