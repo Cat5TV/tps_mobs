@@ -1,11 +1,11 @@
--- dmobs by D00Med
+-- Based on dmobs by D00Med
 
 minetest.register_privilege("dragontamer", {
 	description = "Place, and dig dragon_cave spawn blocks.",
 	give_to_singleplayer = false
 })
 
-mobs:register_mob("dmobs:orc", {
+mobs:register_mob("tps_mobs:orc", {
 	type = "monster",
 	passive = false,
 	reach = 2,
@@ -48,11 +48,11 @@ mobs:register_mob("dmobs:orc", {
 	},
 })
 
-mobs:register_spawn("dmobs:orc", {"default:snow","default:snow_block", "default:desert_sand"}, 20, 10, 15000, 1, 31000)
+mobs:register_spawn("tps_mobs:orc", {"default:snow","default:snow_block", "default:desert_sand"}, 20, 10, 15000, 1, 31000)
 
-mobs:register_egg("dmobs:orc", "Orc", "default_desert_sand.png", 1)
+mobs:register_egg("tps_mobs:orc", "Orc", "default_desert_sand.png", 1)
 
-mobs:register_mob("dmobs:dragon_cave", {
+mobs:register_mob("tps_mobs:dragon_cave", {
 	type = "monster",
 	passive = false,
 	attacks_monsters = true,
@@ -60,7 +60,7 @@ mobs:register_mob("dmobs:dragon_cave", {
 	reach = 2,
 	attack_type = "shoot",
 	shoot_interval = 2.5,
-	arrow = "dmobs:fire",
+	arrow = "tps_mobs:fire",
 	shoot_offset = 1,
 	hp_min = 30,
 	hp_max = 45,
@@ -105,7 +105,7 @@ mobs:register_mob("dmobs:dragon_cave", {
 	},
 })
 
-mobs:register_mob("dmobs:dragon", {
+mobs:register_mob("tps_mobs:dragon", {
 	type = "monster",
 	passive = false,
 	attacks_monsters = true,
@@ -113,7 +113,7 @@ mobs:register_mob("dmobs:dragon", {
 	reach = 2,
 	attack_type = "shoot",
 	shoot_interval = 2.5,
-	arrow = "dmobs:fire",
+	arrow = "tps_mobs:fire",
 	shoot_offset = 1,
 	hp_min = 30,
 	hp_max = 45,
@@ -158,12 +158,12 @@ mobs:register_mob("dmobs:dragon", {
 	},
 })
 --mobs:register_spawn(name, nodes, max_light, min_light, chance, active_object_count, max_height, day_toggle)
-mobs:register_spawn("dmobs:dragon", {"default:dirt_with_grass","default:stone", "default:leaves"}, 20, 10, 750, 1, 31000, false)
+mobs:register_spawn("tps_mobs:dragon", {"default:dirt_with_grass","default:stone", "default:leaves"}, 20, 10, 750, 1, 31000, false)
 
-mobs:register_egg("dmobs:dragon", "Dragon", "default_apple.png", 1)
-mobs:register_egg("dmobs:dragon_cave", "Cave Dragon", "default_apple.png", 1)
+mobs:register_egg("tps_mobs:dragon", "Dragon", "default_apple.png", 1)
+mobs:register_egg("tps_mobs:dragon_cave", "Cave Dragon", "default_apple.png", 1)
 
-mobs:register_arrow("dmobs:fire", {
+mobs:register_arrow("tps_mobs:fire", {
 	visual = "sprite",
 	visual_size = {x = 0.5, y = 0.5},
 	textures = {"dmobs_fire.png"},
@@ -190,7 +190,7 @@ mobs:register_arrow("dmobs:fire", {
 	end,
 })
 
-minetest.register_node("dmobs:dragon_spawner", {
+minetest.register_node("tps_mobs:dragon_spawner", {
 	description = "Spawns Cave Dragon",
 	drawtype = "normal",
 	tiles = {"default_stone.png"},
@@ -216,7 +216,7 @@ minetest.register_node("dmobs:dragon_spawner", {
 })
 
 minetest.register_abm({
-	nodenames = {"dmobs:dragon_spawner"},
+	nodenames = {"tps_mobs:dragon_spawner"},
 	interval = 60,
 	chance = 1,
 	action = function(pos, node)
@@ -227,19 +227,19 @@ minetest.register_abm({
 		local count = 0
 		for _,obj in ipairs(all_objects) do
 		local o = obj:get_entity_name(minetest.registered_entities["name"])
-			if obj and o == 'dmobs:dragon_cave' then
+			if obj and o == 'tps_mobs:dragon_cave' then
 				count = count + 1
 			end
 		end
 			if count == 0 then
 				local pos2 = {x=pos.x, y=pos.y-3, z=pos.z}
-				minetest.add_entity(pos2, 'dmobs:dragon_cave')
+				minetest.add_entity(pos2, 'tps_mobs:dragon_cave')
 			end
 	else
 		local all_objects = minetest.get_objects_inside_radius(pos, 10)
 		for _,obj in ipairs(all_objects) do
 		local o = obj:get_entity_name(minetest.registered_entities["name"])
-			if obj and o == "dmobs:dragon_cave" then
+			if obj and o == "tps_mobs:dragon_cave" then
 			obj:remove()
 			end
 		end
