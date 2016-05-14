@@ -143,7 +143,7 @@ mobs:register_mob("dmobs:dragon", {
 	water_damage = 2,
 	lava_damage = 0,
 	light_damage = 15,
-	view_range = 20,
+	view_range = 60,
 	animation = {
 		speed_normal = 10,
 		speed_run = 20,
