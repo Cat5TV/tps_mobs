@@ -1,3 +1,7 @@
-# tps_mobs
-Various mobs used on The Pixel Shadow servers
-Initialize Repo.
+This mod was entirely customized for TPS by TenPlus1
+
+Dragon = monster, but not destroy builds
+Includes orcs.
+No frilly cutesy stuff.
+
+Orc spawns on snow, snowblock and desert sand where Dragon must be placed manually using egg...
