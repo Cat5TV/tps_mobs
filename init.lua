@@ -233,7 +233,7 @@ minetest.register_abm({
 			end
 		end
 			if count == 0 then
-				local pos2 = {x=pos.x, y=pos.y-7, z=pos.z}
+				local pos2 = {x=pos.x, y=pos.y-4, z=pos.z}
 				minetest.add_entity(pos2, 'tps_mobs:dragon_cave')
 			end
 	else
