@@ -87,7 +87,7 @@ mobs:register_mob("tps_mobs:dragon_cave", {
 		{name = "mobs:lava_orb", chance = 1, min = 1, max = 1},
 	},
 	--fall_speed = 0,
-	stepheight = 1
+	stepheight = 1,
 	water_damage = 2,
 	lava_damage = 0,
 	light_damage = 0,
