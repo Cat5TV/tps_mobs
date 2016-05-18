@@ -57,14 +57,14 @@ mobs:register_mob("tps_mobs:dragon_cave", {
 	type = "monster",
 	passive = false,
 	attacks_monsters = true,
-	damage = 8,
+	damage = 10,
 	reach = 2,
 	attack_type = "shoot",
-	shoot_interval = 2.5,
+	shoot_interval = 1.5,
 	arrow = "tps_mobs:fire",
 	shoot_offset = 1,
-	hp_min = 30,
-	hp_max = 45,
+	hp_min = 45,
+	hp_max = 90,
 	armor = 80,
 	collisionbox = {-0.6, -0.9, -0.6, 0.6, 0.6, 0.6},
 	visual = "mesh",
@@ -78,8 +78,8 @@ mobs:register_mob("tps_mobs:dragon_cave", {
 	sounds = {
 		shoot_attack = "mobs_fireball",
 	},
-	walk_velocity = 3,
-	run_velocity = 5,
+	walk_velocity = 2,
+	run_velocity = 3,
 	jump = true,
 	--fly = true,
 	rotate = 180,
@@ -87,11 +87,11 @@ mobs:register_mob("tps_mobs:dragon_cave", {
 		{name = "mobs:lava_orb", chance = 1, min = 1, max = 1},
 	},
 	--fall_speed = 0,
-	stepheight = 1,
+	stepheight = 1.5,
 	water_damage = 2,
 	lava_damage = 0,
 	light_damage = 0,
-	view_range = 10,
+	view_range = 15,
 	animation = {
 		speed_normal = 10,
 		speed_run = 20,
@@ -110,14 +110,14 @@ mobs:register_mob("tps_mobs:dragon", {
 	type = "monster",
 	passive = false,
 	attacks_monsters = true,
-	damage = 8,
+	damage = 10,
 	reach = 2,
 	attack_type = "shoot",
-	shoot_interval = 2.5,
+	shoot_interval = 1.5,
 	arrow = "tps_mobs:fire",
 	shoot_offset = 1,
-	hp_min = 30,
-	hp_max = 45,
+	hp_min = 45,
+	hp_max = 90,
 	armor = 80,
 	collisionbox = {-0.6, -0.9, -0.6, 0.6, 0.6, 0.6},
 	visual = "mesh",
@@ -132,7 +132,7 @@ mobs:register_mob("tps_mobs:dragon", {
 		shoot_attack = "mobs_fireball",
 	},
 	walk_velocity = 3,
-	run_velocity = 5,
+	run_velocity = 6,
 	jump = true,
 	fly = true,
 	rotate = 180,
@@ -140,11 +140,11 @@ mobs:register_mob("tps_mobs:dragon", {
 		{name = "default:mese_crystal_fragment", chance = 1, min = 1, max = 4},
 	},
 	fall_speed = 0,
-	stepheight = 3,
+	stepheight = 10,
 	water_damage = 2,
 	lava_damage = 0,
 	light_damage = 20,
-	view_range = 60,
+	view_range = 40,
 	animation = {
 		speed_normal = 10,
 		speed_run = 20,
@@ -159,7 +159,7 @@ mobs:register_mob("tps_mobs:dragon", {
 	},
 })
 --mobs:register_spawn(name, nodes, max_light, min_light, chance, active_object_count, max_height, day_toggle)
-mobs:register_spawn("tps_mobs:dragon", {"default:dirt_with_grass","default:stone", "default:leaves"}, 20, 10, 750, 1, 31000, false)
+mobs:register_spawn("tps_mobs:dragon", {"default:dirt_with_grass","default:stone", "default:leaves"}, 20, 10, 750, 2, 31000, false)
 
 mobs:register_egg("tps_mobs:dragon", "Dragon", "default_apple.png", 1)
 mobs:register_egg("tps_mobs:dragon_cave", "Cave Dragon", "default_apple.png", 1)
@@ -175,7 +175,7 @@ mobs:register_arrow("tps_mobs:fire", {
 	hit_player = function(self, player)
 		player:punch(self.object, 1.0, {
 			full_punch_interval = 1.0,
-			damage_groups = {fleshy = 8},
+			damage_groups = {fleshy = 12},
 		}, nil)
 	end,
 
